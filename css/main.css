@@ -189,7 +189,7 @@ header{
 .carousel {
     position: relative;
     height: 550px;
-    perspective: 1500;
+    perspective: 1200px;
 }
 .carousel .carousel-item {
     width: 250px;
@@ -201,4 +201,85 @@ header{
     transform: translateX(8px) translateY(-100px);
     object-fit: cover;
     object-position: center;
+}
+.play{
+    position:absolute;
+    bottom: 50px;
+    left: 100px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    cursor: pointer !important;
+    transition: 0.3s;
+}
+.play i{
+    margin-right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
+.play:hover{
+    color: var(--primary);
+}
+.sci {
+    position:absolute;
+    bottom: 50px;
+    right: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+}
+.sci a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 25px;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+.sci a:hover{
+    color: var(--primary);
+}
+.trailer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.trailer.active{
+    visibility: visible;
+    opacity: 1;
+   
+}
+.trailer iframe{
+    max-width: 900px;
+    outline: none;
+    height: 600px;
+    width: 1500px;
+}
+.close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    filter:invert(1);
+    max-width: 30px;
 }
