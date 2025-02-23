@@ -1,3 +1,22 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+include 'conexion.php';
+include 'getIP.php';
+$consulta = $conexion->prepare("SELECT * FROM ipusuario");
+$consulta->execute();
+$resultado = $consulta->get_result();
+$admin =false;
+if ($resultado->num_rows > 0) {
+	foreach ($resultado as $row) {
+		if ($row['ip'] == obtenerIP()) {
+			$admin = true;
+			echo "eres admin";
+		}
+	}
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +56,12 @@
 		<div class="button">
 			<a href="#" ><i class="fa fa-play" aria-hidden="true"></i> Ver</a>
 			<a href="#" ><i class="fa fa-plus" aria-hidden="true"></i> Favoritos</a>
-	</div>
+			<?php if ($admin) { ?>
+				<a href="admin.php"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
+<a href="admin.php"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+<a href="admin.php"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>
+			<?php } ?>
+		</div>
 	</div>
 	<div class="content bg-65">
 		<img src="./images/the-65-title.png" alt="Movie name" class="movie-title">
@@ -52,7 +76,12 @@
 		<div class="button">
 			<a href="#" ><i class="fa fa-play" aria-hidden="true"></i> Ver</a>
 			<a href="#" ><i class="fa fa-plus" aria-hidden="true"></i> Favoritos</a>
-	</div>
+			<?php if ($admin) { ?>
+				<a href="admin.php"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
+<a href="admin.php"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+<a href="admin.php"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>
+			<?php } ?>
+		</div>
 	</div>
 	<div class="content the-covenant">
 		<img src="./images/the-covenant-title.png" alt="Movie name" class="movie-title">
@@ -67,7 +96,12 @@
 		<div class="button">
 			<a href="#" ><i class="fa fa-play" aria-hidden="true"></i> Ver</a>
 			<a href="#" ><i class="fa fa-plus" aria-hidden="true"></i> Favoritos</a>
-	</div>
+			<?php if ($admin) { ?>
+				<a href="admin.php"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
+<a href="admin.php"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+<a href="admin.php"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>
+			<?php } ?>
+		</div>
 	</div>
 	<div class="content the-black-demon">
 		<img src="./images/the-black-demon-title.png" alt="Movie name" class="movie-title">
@@ -82,7 +116,12 @@
 		<div class="button">
 			<a href="#" ><i class="fa fa-play" aria-hidden="true"></i> Ver</a>
 			<a href="#" ><i class="fa fa-plus" aria-hidden="true"></i> Favoritos</a>
-	</div>
+			<?php if ($admin) { ?>
+				<a href="admin.php"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
+<a href="admin.php"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+<a href="admin.php"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>
+			<?php } ?>
+		</div>
 	</div>
 	<div class="content the-tank">
 		<img src="./images/the-tank-title.png" alt="Movie name" class="movie-title">
@@ -97,8 +136,18 @@
 		<div class="button">
 			<a href="#" ><i class="fa fa-play" aria-hidden="true"></i> Ver</a>
 			<a href="#" ><i class="fa fa-plus" aria-hidden="true"></i> Favoritos</a>
+			<?php if ($admin) { ?>
+				<a href="admin.php"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
+<a href="admin.php"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
+<a href="admin.php"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>
+			<?php } ?>
+		
+				
 	</div>
+				
+				
 	</div>
+	<?php include 'carrusel.php'; ?>
 	<div class="carousel-box">
 		<div class="carousel">
 			<div class="carousel-item" 
@@ -121,8 +170,20 @@
 			onclick="changeBg('bg-the-tank.jpeg', 'the-tank');">
 				<img src="./images/movies/the-tank.jpeg" alt="">
 			</div>
+			<?php 
+			$peliculas = $conexion->prepare("SELECT linkb, nombre, linkp FROM peliculas");
+			$peliculas->execute();
+			$resultadop = $peliculas->get_result();
+			foreach($resultadop as $row){
+			?> <div class="carousel-item"
+			onclick="changeBgl('<?php echo $row['linkb']; ?>', '<?php echo $row['nombre']?>');">
+				<img src="<?php echo $row['linkp']; ?>" alt="">
+				</div>
+			<?php } ?>
+				
 		</div>
 	</div>
+	<
 		<a href="#" class="play" onclick="Cerrarvideo()"><i class="fa fa-play-circle-o" aria-hidden="true"></i> Ver trailer</a>
 		<ul class="sci">
 			<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
