@@ -34,6 +34,9 @@ if ($resultado->num_rows > 0) {
 		<li><a href=""><i class="fa fa-home" aria-hidden="true"></i>
 		</a></li>
 		<li><a href="#">Accion</a></li>
+		<?php if ($admin) { ?>
+			<li><a href="admin.php?action=close">Cerrar sesion</a></li>
+		<?php } ?>
 		<li><a href="#">Infantil</a></li>
 		<li><a href="#">Trend</a></li>
 		<li><a href="#">Favoritos</a></li>
@@ -44,133 +47,11 @@ if ($resultado->num_rows > 0) {
 	</div>
 </header>
 <div class="banner">
-	<div class="content the-little-mermaid active">
-		<img src="./images/the-little-mermaid-title.png" alt="Movie name" class="movie-title">
-		<h4>
-			<span>2023</span><span><i>12+</i></span><span>2h 14min</span><span>Romance</span>
-
-		</h4>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, doloribus? Ea itaque animi provident. Perspiciatis laboriosam ipsum earum, quae eligendi, voluptatibus tempora totam molestiae praesentium facere nostrum atque, distinctio alias.
-
-		</p>
-		<div class="button">
-			<a href="#" ><i class="fa fa-play" aria-hidden="true"></i> Ver</a>
-			<a href="#" ><i class="fa fa-plus" aria-hidden="true"></i> Favoritos</a>
-			<?php if ($admin) { ?>
-				<a href="#" onclick="openModalAgregar()"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
-				<a href="#" onclick="openModalEditar()"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-				<a href="#" onclick="openModalBorrar()"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>
-			<?php } ?>
-		</div>
-	</div>
-	<div class="content bg-65">
-		<img src="./images/the-65-title.png" alt="Movie name" class="movie-title">
-		<h4>
-			<span>2023</span><span><i>15+</i></span><span>2h 14min</span><span>Romance</span>
-
-		</h4>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, doloribus? Ea itaque animi provident. Perspiciatis laboriosam ipsum earum, quae eligendi, voluptatibus tempora totam molestiae praesentium facere nostrum atque, distinctio alias.
-
-		</p>
-		<div class="button">
-			<a href="#" ><i class="fa fa-play" aria-hidden="true"></i> Ver</a>
-			<a href="#" ><i class="fa fa-plus" aria-hidden="true"></i> Favoritos</a>
-			<?php if ($admin) { ?>
-				<a href="#" onclick="openModalAgregar()"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
-				<a href="#" onclick="openModalEditar()"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-				<a href="#" onclick="openModalBorrar()"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>
-			<?php } ?>
-		</div>
-	</div>
-	<div class="content the-covenant">
-		<img src="./images/the-covenant-title.png" alt="Movie name" class="movie-title">
-		<h4>
-			<span>2023</span><span><i>12+</i></span><span>2h 14min</span><span>Romance</span>
-
-		</h4>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, doloribus? Ea itaque animi provident. Perspiciatis laboriosam ipsum earum, quae eligendi, voluptatibus tempora totam molestiae praesentium facere nostrum atque, distinctio alias.
-
-		</p>
-		<div class="button">
-			<a href="#" ><i class="fa fa-play" aria-hidden="true"></i> Ver</a>
-			<a href="#" ><i class="fa fa-plus" aria-hidden="true"></i> Favoritos</a>
-			<?php if ($admin) { ?>
-				<a href="#" onclick="openModalAgregar()"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
-				<a href="#" onclick="openModalEditar()"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-				<a href="#" onclick="openModalBorrar()"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>
-			<?php } ?>
-		</div>
-	</div>
-	<div class="content the-black-demon">
-		<img src="./images/the-black-demon-title.png" alt="Movie name" class="movie-title">
-		<h4>
-			<span>2023</span><span><i>12+</i></span><span>2h 14min</span><span>Romance</span>
-
-		</h4>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, doloribus? Ea itaque animi provident. Perspiciatis laboriosam ipsum earum, quae eligendi, voluptatibus tempora totam molestiae praesentium facere nostrum atque, distinctio alias.
-
-		</p>
-		<div class="button">
-			<a href="#" ><i class="fa fa-play" aria-hidden="true"></i> Ver</a>
-			<a href="#" ><i class="fa fa-plus" aria-hidden="true"></i> Favoritos</a>
-			<?php if ($admin) { ?>
-				<a href="#" onclick="openModalAgregar()"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
-				<a href="#" onclick="openModalEditar()"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-				<a href="#" onclick="openModalBorrar()"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>
-			<?php } ?>
-		</div>
-	</div>
-	<div class="content the-tank">
-		<img src="./images/the-tank-title.png" alt="Movie name" class="movie-title">
-		<h4>
-			<span>2023</span><span><i>12+</i></span><span>2h 14min</span><span>Romance</span>
-
-		</h4>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, doloribus? Ea itaque animi provident. Perspiciatis laboriosam ipsum earum, quae eligendi, voluptatibus tempora totam molestiae praesentium facere nostrum atque, distinctio alias.
-
-		</p>
-		<div class="button">
-			<a href="#" ><i class="fa fa-play" aria-hidden="true"></i> Ver</a>
-			<a href="#" ><i class="fa fa-plus" aria-hidden="true"></i> Favoritos</a>
-			<?php if ($admin) { ?>
-				<a href="#" onclick="openModalAgregar()"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
-				<a href="#" onclick="openModalEditar()"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
-				<a href="#" onclick="openModalBorrar()"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>
-			<?php } ?>
-		
-				
-	</div>
-				
-				
-	</div>
+	
 	<?php include 'carrusel.php'; ?>
 	<div class="carousel-box">
 		<div class="carousel">
-			<div class="carousel-item" 
-			onclick="changeBg('bg-little-mermaid.jpg', 'the-little-mermaid');">
-				<img src="./images/movies/the-little-mermaid.jpeg" alt="">
-			</div>
-			<div class="carousel-item" 
-			onclick="changeBg('bg-65.jpeg', 'bg-65');">
-				<img src="./images/movies/65.jpg" alt="">
-			</div>
-			<div class="carousel-item" 
-			onclick="changeBg('bg-the-covenant.jpeg', 'the-covenant');">
-				<img src="./images/movies/the-covenant.jpg" alt="">
-			</div>
-			<div class="carousel-item"
-			onclick="changeBg('bg-the-black-demon.jpeg', 'the-black-demon');">
-				<img src="./images/movies/the-black-demon.jpg" alt="">
-			</div>
-			<div class="carousel-item"
-			onclick="changeBg('bg-the-tank.jpeg', 'the-tank');">
-				<img src="./images/movies/the-tank.jpeg" alt="">
-			</div>
+			
 			<?php 
 			$peliculas = $conexion->prepare("SELECT linkb, nombre, linkp FROM peliculas");
 			$peliculas->execute();
@@ -247,7 +128,7 @@ if ($resultado->num_rows > 0) {
 <div id="modalEditar" class="modal">
     <div class="modal-content">
         <h4>Editar Película</h4>
-        <form id="formEditar" method="POST" action="admin.php?action=add">
+        <form id="formEditar" method="POST" action="admin.php?action=edit">
             <div class="input-field">
                 <input id="enombre" type="text" name="nombre" required>
                 <label for="nombre">Nombre</label>
@@ -303,6 +184,7 @@ if ($resultado->num_rows > 0) {
 		$('#modalAgregar').modal('open');
 	}
 	function openModalEditar(nombre, linkl, linkb, linkp, fecha, edad, duracion, genero, descripcion) {
+		
 		$('#enombre').val(nombre);
 		$('#elinkl').val(linkl);
 		$('#elinkb').val(linkb);

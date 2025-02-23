@@ -1,6 +1,7 @@
 <?php
 include 'conexion.php';
-global $conexion; // Asegúrate de que $conexion sea accesible
+
+global $conexion; 
 
 $peliculas = $conexion->prepare("SELECT * FROM peliculas");
 $peliculas->execute();
@@ -23,7 +24,7 @@ foreach($resultadop as $row) {
             if ($admin) {
                 echo '<a href="#" onclick="openModalAgregar()"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>';
                 echo '<a href="#" onclick="openModalEditar(\'' . $row['nombre'] . '\', \'' . $row['linkl'] . '\',\'' . $row['linkb'] . '\',\'' . $row['linkp'] . '\', \'' . $row['fecha'] . '\', \'' . $row['edad'] . '\', \'' . $row['duracion'] . '\', \'' . $row['genero'] . '\', \'' . $row['descripcion'] . '\')"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>';
-                echo '<a href="#" onclick="openModalBorrar(' . $row['id'] . ')"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>';
+                echo '<a href="admin.php?action=' . $row['id'] . '"><i class="fa fa-trash" aria-hidden="true"></i> Borrar</a>';
             }
             ?>
         </div>

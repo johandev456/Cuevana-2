@@ -1,6 +1,18 @@
 <?php
 include 'conexion.php';
-include 'loginf.php';
+global $conexion;
+include_once 'loginf.php';
+$consulta = $conexion->prepare("SELECT * FROM ipusuario");
+$consulta->execute();
+$resultado = $consulta->get_result();
+if ($resultado->num_rows > 0) {
+	foreach ($resultado as $row) {
+        if ($row['ip'] == obtenerIP()) {
+
+			header('Location: index.php');
+		}
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
