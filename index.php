@@ -174,6 +174,9 @@ if ($resultado->num_rows > 0) {
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  <script type="text/javascript" src="./js/script.js"></script>
 <script>
+    if (<?php echo $admin ? 'true' : 'false'; ?>) {
+        M.toast({html: 'Bienvenido admin'});
+    }
 	$(document).ready(function(){
 		$('.carousel').carousel();
 		$('.modal').modal();
