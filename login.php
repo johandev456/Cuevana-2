@@ -17,7 +17,7 @@ if ($resultado->num_rows > 0) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Design by foolishdeveloper.com -->
+
     <title>Cuevana 2</title>
  
     <link rel="preconnect" href="https://fonts.gstatic.com">
